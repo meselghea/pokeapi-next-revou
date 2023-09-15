@@ -18,6 +18,8 @@ const searchFilter = ( pokemonList: any ) => {
         (pokemon: any) => pokemon.name.toLowerCase().includes(searchText.toLocaleLowerCase())
     )
 }
+//add input value
+
 // save filtered name object
 const filteredPokemonList = searchFilter(pokemonList);
 // show the filtered
@@ -43,14 +45,25 @@ return (
         </div>
         <h3 className='pt-12 pb-6 text-3xl text-center'>Pokemon Collection</h3>
     </div>
-
-    <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        {filteredPokemonList.map((pokemon : any) => {
-            return (
-                <PokemonCard name={pokemon?.name} key={pokemon.name + 'Card'}/>
-            )
-        } )}
-    </div>
-    </>
-)
+    {filteredPokemonList.length === 0 ? (
+                <div className="text-center text-red-500">
+                    No matching Pokemon found.
+                </div>
+            ) : (
+                <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
+                    {filteredPokemonList.map((pokemon: any) => {
+                        return (
+                            <PokemonCard
+                                name={pokemon?.name}
+                                key={pokemon.name + 'Card'}
+                            />
+                        );
+                    })}
+                </div>
+            )}
+        </>
+    );
 }
+
+
+
