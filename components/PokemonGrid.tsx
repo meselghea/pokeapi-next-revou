@@ -50,9 +50,6 @@ return (
                 <PokemonCard name={pokemon?.name} key={pokemon.name + 'Card'}/>
             )
         } )}
-       <PokemonCard name='Pikachu' />
-       <PokemonCard name='Pikachu' />
-       <PokemonCard name='Pikachu' />
     </div>
     </>
 )

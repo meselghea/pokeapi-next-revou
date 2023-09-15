@@ -14,6 +14,7 @@ export function PokemonCard({ name } : PokemonCardProps) {
         <h2 className={`text-2xl font-semibold`}>
           {name.charAt(0).toUpperCase() + name.slice(1) }
         </h2>
+        
       </Link>
     )
 }
